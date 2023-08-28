@@ -1,0 +1,168 @@
+.cabecalho__menu-hamburguer {
+    width: 24px;
+    height: 24px;
+    background-image: url("../assets/Menu.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    display: inline-block;
+}
+
+.cabecalho {
+    background-color: var(--color-secundaria);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+}
+
+.container {
+    display: flex;
+    align-items: center;
+}
+
+.container__imagem {
+    padding: 1rem;
+}
+
+.lista-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    width: 60vw;
+}
+
+
+.container__botao:checked~.lista-menu {
+    display: block;
+}
+
+.lista-menu__titulo, .lista-menu__item {
+    padding: 1rem;
+    background-color: var(--color-secundaria);
+}
+
+.lista-menu__titulo {
+    color: var(--color-terciaria);
+    font-weight: 700;
+}
+
+.container__botao:checked ~ .container__rotulo > .cabecalho__menu-hamburguer {
+    background-image: url("../assets/menu_black.png");
+}
+
+.container__botao:checked ~ .container__rotulo {
+    background-image: var(--color-quartenaria);
+}
+
+
+.lista-menu__link {
+    background: var(--color-quartenaria);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-transform: uppercase;
+}
+
+.container__botao {
+    display: none;
+}
+
+.container__titulo {
+    display: none;
+}
+
+.opcoes {
+    display: none;
+}
+
+.container__texto {
+    display: none;
+}
+
+@media screen and (min-width: 1024px) {
+    .cabecalho__menu-hamburguer {
+        display: none;
+    }
+
+    .opcoes__botao:checked ~ .lista-menu {
+        display: block;
+        width: auto;
+    }
+
+    .opcoes__botao:checked ~ .opcoes__rotulo > .opcoes__item {
+        background-image: var(--color-quartenaria);
+        color: var(--color-secundaria);
+    }
+
+    .lista-menu__item:hover {
+        background: var(--color-quartenaria);
+    }
+
+    .lista-menu__item:hover > .lista-menu__link {
+        /*No inicio do projeto foi colocado um degrade na fonte usando background e assossiando ele a fonte e o -webkit-text-fill-color estava transparente, logo tivemos que usar webkit de novo pra poder usar cor na font*/
+        -webkit-text-fill-color: var(--color-secundaria);
+        text-decoration: none;
+    }
+
+    .opcoes__botao {
+        display: none;
+    }
+
+    .container__titulo, .container__titulo--negrito {
+        font-family: var(--font-secundaria);
+        font-size: 30px;
+    }
+
+    .container__titulo {
+       font-weight: 400; 
+       display: block;
+    }
+
+    .container__titulo--negrito {
+        font-weight: 700;
+    }
+
+    .opcoes {
+        display: flex;
+        align-items: center;
+        padding: 0 1rem;
+    }
+
+    .opcoes__item {
+        padding: 2rem 1rem;
+    }
+
+    .opcoes__link {
+        color: var(--color-preto);
+        text-decoration: none;
+        text-transform: uppercase;
+        padding: 2rem 1rem;
+    }
+
+    .container__imagem-transparente {
+        display: none;
+    }
+}
+
+@media screen and (min-width: 1728px) {
+    .cabecalho {
+        padding: 0 2rem;
+    }
+
+    .opcoes{
+        /*como esta em flex pode usar margin auto pra ele preencher automaticamente, no caso o margin-right fez preencher todo o lado direito fazendo os lementos ierem pra esquerda*/
+        margin-right: auto;
+
+    }
+    
+    .container__link {
+        display: flex;
+        align-items: center;
+        text-decoration: none;
+        color: var(--color-preto);
+    }
+
+    .container__texto {
+        display: block;
+    }
+}

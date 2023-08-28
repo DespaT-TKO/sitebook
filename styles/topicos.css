@@ -1,0 +1,70 @@
+.topicos {
+    /*background pq a cor é gradiente e nao cor única*/
+    background: var(--color-quartenaria);
+    text-align: center;
+    padding: 1.5rem 0;
+}
+
+.topicos__titulo {
+    color: var(--color-secundaria);
+    font-weight: 300;
+    padding-bottom: 1rem;
+}
+
+.topicos__lista {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    color: var(--color-secundaria);
+      
+}
+
+.topicos__item {
+    margin: 1.7rem 0.5rem;
+}
+
+.topicos__link {
+    color: var(--color-secundaria);
+    padding: 1rem 1.3rem;
+    background-color: var(--color-terciaria);
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 700; 
+}
+
+@media screen and (min-width: 1024px) {
+    .topicos__titulo {
+        font-size: 24px;
+        font-weight: 300;
+        padding-bottom: 2rem;
+    }
+
+    .topicos__lista {
+        margin: 0rem 2rem;
+    }
+
+    .topicos__item {
+        padding: 0.3rem;
+    }
+
+    .topicos__link {
+        font-size: 24px;
+        font-weight: 700;
+        padding: 1.3rem 1.5rem;
+    }
+}
+
+@media screen and (min-width: 1728px) {
+    .topicos {
+        padding: 3rem 25vw;
+    }
+
+    .topicos__titulo {
+        font-size: 32px;
+        margin: 2rem 0 1rem 0;
+    }
+
+    .topicos__item {
+        margin: 2rem 0.5rem;
+    }
+}
